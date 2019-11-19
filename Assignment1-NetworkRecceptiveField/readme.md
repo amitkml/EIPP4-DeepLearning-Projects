@@ -38,4 +38,25 @@ We always train our Neural Network for more than one epoch because network weigh
 
 ![EpochVsAccuracy](https://github.com/amitkayal/akDeepLearningMaster/blob/master/Training-error-versus-epoch-number-for-the-neural-network-model.png?raw=true)
 
+## 3X3 convolution filter
+3X3 convolution filter, in general will always have a third dimension in size and this is the most eficient fielter in today's world. So it will have 9 weights and they will be learnt as part of backpropagation. Initial value can be set by keras inbuilt function of kernel initializer.
+One of the commercial reason for using 3x3 filter is that our current GPU's(NVDIA, Intel etc) are optimized heavily for such filter. Also note that, all kernel are of Odd size and we generally don't use even size kernel. This is because am even number does not have concept of mirror and so we can't talk of things are in right and things are in left.
+
+It is always number of parameters which are less with 3x3 filter. Any filter like 5x5 or 7x7 can be represented by a number of 3x3. Lets see how? 
+
+**Scenario:  One(Channel=1) 5x5 filter**
+
+- Input Size: 5x5 
+- Output size: 1x1
+- No of parameters: 25
+
+**Scenario: One(Channel=1) 3x3 filter**
+
+- Input Size: 5x5 
+- Output after 1st convolution: 3x3
+- Output after 2nd convolution: 1x1
+- Final Output: 1x1
+- No of parameters=18
+
+Above example shows how a 5x5 filter can be represented by 2 no of 3x3 filter and also it reduces no parameters to be learning. But here no of convolution operation is twice. The receptive field of the 5x5 kernel can be covered by two 3x3 kernels.  Stacking small filters gives us more discriminative power via the non-linearity and via the composition of abstraction. 
 
