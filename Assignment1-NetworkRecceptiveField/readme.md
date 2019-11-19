@@ -87,3 +87,29 @@ It is always number of parameters which are less with 3x3 filter. Any filter lik
 
 Above example shows how a 5x5 filter can be represented by 2 no of 3x3 filter and also it reduces no parameters to be learning. But here no of convolution operation is twice. The receptive field of the 5x5 kernel can be covered by two 3x3 kernels.  Stacking small filters gives us more discriminative power via the non-linearity and via the composition of abstraction. 
 
+## Activation Functions
+
+One of the problem with unstructured data (Video, Audio, Text, Images etc) is that linear separation does not work and activation function helps us to bring non-linearity aspect into the Neural network architecture. Output of NN will be a simple linear function if we don't apply an activation function and so it would not be able to resolve any complex problem. We can assume a NN as simple regression model without activation function.
+
+NN is considered as universal function approximations and hence NN should be able to learn from any input or map any sort of input with their output. So this means our NN which makes output as f(X) with non-linearity introduced by activation function will be able to map/learn. Activation function also helps us to have **differentiable** and this helps us with backpropagation with Gradient descent. Any differentiable function will have derivative and hence will help to back propagate the loss and correct weights. So NN with activation function helps us to achieve **Input times weights , add Bias and Activate**.
+
+Most popular activation functions are
+
+- ReLU - Rectified Linear Unit
+- Sigmoid/Logistic
+
+**ReLU - Rectified Linear Unit**
+
+This activation unction basically means **R(x) = max(0,x) i.e if x < 0 , R(x) = 0 and if x >= 0 , R(x) = x**. This is very easy approach to introduce non-linearity and helps us to have differentiable which helps to resoolve vanishing gradient function. This is most popular activation function and almost all CNN layers uses this.
+
+Only **limitation** with this activation function is that it can be used **<u>only in hidden layers of Neural Network Models</u>**. 
+
+![ReLU](https://github.com/amitkayal/akDeepLearningMaster/blob/master/ReLU%20Activation%20Function.JPG?raw=true)
+
+
+
+**Sigmoid/Logistic**
+
+It is an activation function of form `f(x) = 1 / 1 + exp(-x)` . Its Range is between 0 and 1. It is a S — shaped curve. It is easy to apply and helps us to tackle vanishing gradient function. Problem with Sigmoid are that it has slow convergence, output not zero centered and gradient saturation near the top and below. This is where ReLU is in better position to handle.
+
+![Sigmoid](https://github.com/amitkayal/akDeepLearningMaster/blob/master/Sigmoid%20Activation%20Function.JPG?raw=true)
