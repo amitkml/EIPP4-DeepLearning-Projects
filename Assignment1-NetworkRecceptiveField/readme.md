@@ -29,6 +29,22 @@ From CNN perspective, Kernel=Filter=Feature Extractor.
 ![sobel](https://saama-dbe0.kxcdn.com/wp-content/uploads/2017/12/05.jpg?iv=95)
 
 In CNNs, filters are not defined. The value of each filter is learned during the training process. By being able to learn the values of different filters, CNNs can find more meaning from images that humans and human designed filters might not be able to find.
+### Filter size design
+
+Following factors plays key role in determining filter/kernel size.
+
+- Smaller filter look at few pixels at a time and hence has smaller receptive field per layer while bigger filter look at higher no of pixels at a time so they provide bigger receptive field per layer.
+- Smaller filter will help us to extract highly local features(smaller and complex ones) and may not have general overview of the input while bigger filter will help us to get basic component of the image as they have higher receptive field.
+- Smaller filters helps us to extract higher no of information as the output size of feature map gets reduced slightly(Ex: Input size is 400X400 and after 3x3 convolution the feature map becomes 398x398) and these information can be used later in the network. Higher filter size results in much smaller feature map size and so amount if information gets reduced.
+- Lower size kernel has lower number of weights which makes convolution process computationally efficient which this is exactly opposite for higher size kernel.
+- Lower size kernel often results in higher number of layers into network and this means network needs to store all the layer details into memory for backpropagation which results in requirement of higher memory. Higher filter uses less storage memory for backpropagation.
+
+Reducing the kernel size seems to be trend and 3x3 is most popular filter nowadays.
+
+- Year-2012, Alex Net used 11x11 filter size
+- Year-2013, ZFNet used 7x7 filter size
+- Year-2014, GoogleNet used 7x7(first few layers) and 5x5
+- Year 2014, VGG used 3x3 filter size
 
 ## 1x1 Filter
 This acts like a DJ who does mix and match. This type of filter helps us to maintain special dimension aspect with channel reduction. Extensively used in GoogLeNet architecture as **"bottleneck layer"**. So this helps basically projecting depth down.
