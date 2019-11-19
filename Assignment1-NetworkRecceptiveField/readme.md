@@ -30,6 +30,17 @@ From CNN perspective, Kernel=Filter=Feature Extractor.
 
 In CNNs, filters are not defined. The value of each filter is learned during the training process. By being able to learn the values of different filters, CNNs can find more meaning from images that humans and human designed filters might not be able to find.
 
+## 1x1 Filter
+This acts like a DJ who does mix and match. This type of filter helps us to maintain special dimension aspect with channel reduction. Extensively used in GoogLeNet architecture as **"bottleneck layer"**. So this helps basically projecting depth down.
+
+We could have used 3x3 filter with lower number of channels but that does not help us to maintain spatial dimensions.
+
+![1x1](https://github.com/amitkayal/akDeepLearningMaster/blob/master/1x1.gif?raw=true)
+
+![1x1](https://github.com/amitkayal/akDeepLearningMaster/blob/master/1x1_Convolution.JPG?raw=true)
+
+
+
 ## Epochs
 
 An Epoch is when an full training dataset is passed forward through the Neural Network and backward through the neural network only 
