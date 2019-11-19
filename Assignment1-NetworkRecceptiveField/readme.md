@@ -113,3 +113,24 @@ Only **limitation** with this activation function is that it can be used **<u>on
 It is an activation function of form `f(x) = 1 / 1 + exp(-x)` . Its Range is between 0 and 1. It is a S — shaped curve. It is easy to apply and helps us to tackle vanishing gradient function. Problem with Sigmoid are that it has slow convergence, output not zero centered and gradient saturation near the top and below. This is where ReLU is in better position to handle.
 
 ![Sigmoid](https://github.com/amitkayal/akDeepLearningMaster/blob/master/Sigmoid%20Activation%20Function.JPG?raw=true)
+
+## Receptive field and its Importance
+
+Refer the following diagram where the output in the 2nd layer (marked in green) covers 5x5 pixel of input image and so this is its effective receptive field (RF).  Its local receptive field will be 3x3. Local RF is relative to its previous layer and Effective RF is w.r.t original input image to the network. Similarly each cell (marked in light yellow) covers 3x3 of the input image and so its Local RF is 3x3.  **RF is actually the amount of context that a neuron sees in the input to predict its output**. RF is important because our last layer need to see atleast full image to predict. So this means we need to add layers/follow the process described below to reach the object size or as close as we can of object size.
+#### How to increase Receptive field?
+
+The three ways in which we can increase the RF are:
+
+1. Make larger kernel sizes
+
+2. Use higher stride or pooling
+
+   **Example conv1D with 2 layers, kernel size 3 and stride 2**
+
+![RF](https://cdn-images-1.medium.com/max/900/1*dMqIw023uH21yu1L8UpJcw.png)
+
+Lets analyze following two image and understand more easily how we can build the network and ensure last layer of network can see the whole image.  **We can see the whole pyramid base from top for both the image but later one has steps and hence that involves no of layers less. This means instead of stacking more layers to increase ERF, it is better to do step wise whereby we can still increase ERF and reduce no of parameters. This step aspect can be achieved by increasing stride or introducing max pooling**.
+
+![Egyptian](https://www.history.com/.image/t_share/MTU3ODc3NjU1NjcyMTM3MDMz/egyptian-pyramids.jpg) and ![mylan](https://mymodernmet.com/wp/wp-content/uploads/2018/11/egyptian-pyramids-2.jpg)
+
+3. Using dilation factors in the kernels
