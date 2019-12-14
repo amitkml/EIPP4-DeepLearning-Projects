@@ -1,0 +1,38 @@
+## Model Final ACcuracy Details
+
+loss: 0.1280
+    gender_output_loss: 0.0082
+    image_quality_output_loss: 0.0204
+    age_output_loss: 0.0266
+    weight_output_loss: 0.0187
+    bag_output_loss: 0.0134
+    footwear_output_loss: 0.0162
+    pose_output_loss: 0.0097
+    emotion_output_loss: 0.0149
+Training Accuracy
+    gender_output_acc: 0.9976
+    image_quality_output_acc: 0.9928
+    age_output_acc: 0.9915
+    weight_output_acc: 0.9950
+    bag_output_acc: 0.9957
+    footwear_output_acc: 0.9947
+    pose_output_acc: 0.9965
+    emotion_output_acc: 0.9953
+val_loss: 0.0109
+    val_gender_output_loss: 0.0011
+    val_image_quality_output_loss: 0.0014
+    val_age_output_loss: 0.0012
+    val_weight_output_loss: 7.8721e-04
+    val_bag_output_loss: 0.0037
+    val_footwear_output_loss: 0.0015
+    val_pose_output_loss: 3.3333e-04
+    val_emotion_output_loss: 8.1567e-04
+Val Accuracy
+    val_gender_output_acc: 0.9997
+    val_image_quality_output_acc: 0.9998
+    val_age_output_acc: 0.9997
+    val_weight_output_acc: 1.0000
+    val_bag_output_acc: 0.9988
+    val_footwear_output_acc: 0.9997
+    val_pose_output_acc: 1.0000
+    val_emotion_output_acc: 0.9999
