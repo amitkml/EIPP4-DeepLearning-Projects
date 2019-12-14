@@ -1,7 +1,7 @@
 ## Model Final ACcuracy Details
 
 - loss: 0.1280
-    -     gender_output_loss: 0.0082
+    -    gender_output_loss: 0.0082
     -    image_quality_output_loss: 0.0204
     -    age_output_loss: 0.0266
     -    weight_output_loss: 0.0187
